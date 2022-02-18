@@ -56,14 +56,21 @@ public class TutorialManager : MonoBehaviour
         skipBtn.SetActive(true);
     }
 
+    private void TextEnd()
+    {
+        TextSetting(tutorialText, tutorialTalk, true);
+        TextSetting(explainText, explainTalk[count], true);
+    }
+
     public void GameStart()
     {
         spawn.gameObject.SetActive(true);
         timeManager.gameObject.SetActive(true);
         tutorialUI.SetActive(false);
-        gameObject.SetActive(false);
         skipBtn.SetActive(false);
+        TextEnd();
         CryptoPlayerPrefs.SetString("Tutorial", "off");
+        gameObject.SetActive(false);
     }
 
     void TextSetting(TypeEffect type, string text, bool isAnime)
@@ -78,8 +85,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (count >= 3)
             {
-                TextSetting(tutorialText, tutorialTalk, true);
-                TextSetting(explainText, explainTalk[count], true);
+                TextEnd();
                 /*tutorialText.isAnim = true;
                 tutorialText.SetMsg(tutorialTalk);*/
                 GameStart();

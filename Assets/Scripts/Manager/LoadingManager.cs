@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    AsyncOperation async1;               // 비동기화
-    AsyncOperation async2;               // 비동기화
+    private AsyncOperation async1;
+    private AsyncOperation async2;
 
     public GameObject loadingBar;
 
@@ -15,8 +15,6 @@ public class LoadingManager : MonoBehaviour
 
     void Start()
     {
-        /*async1 = SceneManager.LoadSceneAsync("Stage", LoadSceneMode.Single);
-        SceneManager.LoadSceneAsync("Setting", LoadSceneMode.Additive);*/
 
         if (CryptoPlayerPrefs.GetString("GoTitle") == "on")
         {
@@ -33,7 +31,6 @@ public class LoadingManager : MonoBehaviour
 
     void Update()
     {
-        /*if (CryptoPlayerPrefs.GetString("GoTitle") == "Off")*/
         if (!async1.isDone)       // 현재 있는 작업상황이 끝났는지??
         {
             progress = (async1.progress + async2.progress) * 100;
@@ -45,12 +42,5 @@ public class LoadingManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        /*else
-        if (!async1.isDone)       // 현재 있는 작업상황이 끝났는지??
-        {
-            progress = async1.progress * 100;
-            loadingBar.GetComponent<Image>().fillAmount = (int)progress;
-            Debug.Log("Progress : " + progress);
-        }*/
     }
 }

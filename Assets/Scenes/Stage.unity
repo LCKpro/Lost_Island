@@ -8839,7 +8839,7 @@ Transform:
   - {fileID: 739454893}
   - {fileID: 1502685392}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &426449041
 PrefabInstance:
@@ -9361,7 +9361,7 @@ Transform:
   - {fileID: 125309040}
   - {fileID: 145630425}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &447907250
 PrefabInstance:
@@ -22007,7 +22007,7 @@ Transform:
   - {fileID: 559818147}
   - {fileID: 1651965939}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &949434279 stripped
 Transform:
@@ -44407,7 +44407,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1843458691
 PrefabInstance:
@@ -46259,6 +46259,7 @@ GameObject:
   - component: {fileID: 1881689103}
   - component: {fileID: 1881689101}
   - component: {fileID: 1881689100}
+  - component: {fileID: 1881689102}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -46299,6 +46300,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelSpeed: 10
   target: {fileID: 859300272}
+--- !u!81 &1881689102
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881689099}
+  m_Enabled: 1
 --- !u!20 &1881689103
 Camera:
   m_ObjectHideFlags: 0
@@ -46356,7 +46365,7 @@ Transform:
   - {fileID: 1919008133}
   - {fileID: 397590519}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1882079986 stripped
 Transform:
