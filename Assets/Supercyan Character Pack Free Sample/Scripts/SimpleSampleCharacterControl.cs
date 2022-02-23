@@ -167,21 +167,27 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         if(other.tag == "Item")
         {
             Item item = other.GetComponent<Item>();
+            float itemValue;
             BGMManager.instance.PlaySfx(transform.position, BGMManager.instance.getItemSound, 0, 1);
             switch (item.itemNum)
             {
                 case 0 :
                     Debug.Log("0번 아이템 사용");
+                    itemValue = (GameManager.instance.StageNumber * 1.3f) + 1.5f;
+                    ExplainManager.instance.TextGenerate(0);
                     GameManager.instance.BuffUI_On(0);
-                    Item0_SpeedUp((GameManager.instance.StageNumber * 1.3f) + 1.5f);
+                    Item0_SpeedUp(itemValue);
                     break;
                 case 1:
                     Debug.Log("1번 아이템 사용");
+                    itemValue = (GameManager.instance.StageNumber) * 1.0f;
+                    ExplainManager.instance.TextGenerate(1);
                     GameManager.instance.BuffUI_On(1);
-                    Item1_JumpPowerUp((GameManager.instance.StageNumber) * 0.8f);
+                    Item1_JumpPowerUp(itemValue);
                     break;
                 case 2:
                     Debug.Log("2번 아이템 사용");
+                    ExplainManager.instance.TextGenerate(2);
                     Item2_Heal();
                     break;
                 default:
@@ -195,6 +201,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         {
             BGMManager.instance.PlaySfx(transform.position, BGMManager.instance.getItemSound, 0, 1);
             GameManager.instance.GetStageClearItem();
+            ExplainManager.instance.TextGenerate(10);
             other.gameObject.SetActive(false);
         }
 

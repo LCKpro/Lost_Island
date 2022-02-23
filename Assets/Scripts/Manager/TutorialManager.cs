@@ -80,7 +80,7 @@ public class TutorialManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonUp(0))
+        /*if(Input.GetMouseButtonUp(0))
         {
             if (count >= 3)
             {
@@ -108,7 +108,7 @@ public class TutorialManager : MonoBehaviour
                 explainText.SetMsg(explainTalk[count]);
                 tutorialImg.sprite = tutorialSprite[count];
             }
-        }
+        }*/
 
         if(Input.touchCount > 0)
         {
