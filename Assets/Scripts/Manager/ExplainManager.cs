@@ -36,7 +36,6 @@ public class ExplainManager : MonoBehaviour
 
     public void TextGenerate(int number)
     {
-        Debug.Log("렝쓰 : ");
         if (!isEnd)
         {
             nextInfo.Add(number);

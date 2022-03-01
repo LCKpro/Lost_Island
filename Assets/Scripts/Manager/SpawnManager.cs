@@ -127,11 +127,20 @@ public class SpawnManager : MonoBehaviour
 
     private void ItemSpawn()
     {
+        if (compareValue.Count > 15)
+        {
+            Debug.Log("필드에 깔린 인수가 15보다 높음");
+            return;
+        }
+
         int randSpawnNum = Random.Range(3, 4 + GameManager.instance.StageNumber);
         
         for (int i = 0; i < randSpawnNum; i++)
         {
             int randSpawnTr = Random.Range(0, spawnPos.Length);
+
+            if (!compareValue.Contains(randSpawnTr))
+                i--;
 
             int randItemNum = Random.Range(0, itemPref.Length + 1);
             string type = "";
@@ -154,25 +163,12 @@ public class SpawnManager : MonoBehaviour
                     break;
             }
 
-            if (compareValue.Contains(randSpawnTr) != true)
+            if (!compareValue.Contains(randSpawnTr))
             {
                 GameObject gameObj = MakeObj(type);
                 gameObj.GetComponent<Spawn>().SpawnNum = randSpawnTr;
-                gameObj.SetActive(true);
                 gameObj.transform.position = spawnPos[randSpawnTr].position;
-
-                if(gameObj.tag == "Item")
-                    compareValue.Add(randSpawnTr);
-            }
-            else if (compareValue.Count > 15)
-            {
-                Debug.Log("필드에 깔린 인수가 15보다 높음");
-                break;
-            }
-            else
-            {
-                Debug.Log("중복이라 인덱스 --");
-                i--;
+                compareValue.Add(randSpawnTr);
             }
         }
     }
