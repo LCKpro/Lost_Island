@@ -35,12 +35,14 @@ public class TutorialManager : MonoBehaviour
 
     private void Generate()
     {
-        if (CryptoPlayerPrefs.GetString("Tutorial") == "off")
+        if (CryptoPlayerPrefs.GetString("Tutorial") != "on")
         {
+            Debug.Log("튜토리얼 제거!");
             GameStart();
             return;
         }
 
+        CryptoPlayerPrefs.SetString("Tutorial", "0");
         Debug.Log("호출");
         tutorialUI.SetActive(true);
         tutorialText.SetMsg(tutorialTalk);
@@ -62,7 +64,6 @@ public class TutorialManager : MonoBehaviour
         tutorialUI.SetActive(false);
         skipBtn.SetActive(false);
         TextEnd();
-        CryptoPlayerPrefs.SetString("Tutorial", "off");
         gameObject.SetActive(false);
     }
 

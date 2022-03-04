@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int maxStage = 4;
     public FadeTxt fadeTxt;
-    public Text stageTxt;
-    public Text stageTxtShadow;
 
     public Image[] healthImg;
     public Image gameOverUI;
@@ -22,17 +20,17 @@ public class GameManager : MonoBehaviour
     private List<Sprite> itemLists;
 
     public int healthCnt;
-    private int stageNum;
-    private int maxStageClearItem;
-    private int currentStageClearItem = 0;
 
-    public Text leftNumTxt;
+    public Image expGainImg;
+    public Text playerLvText;
+    private float expPoint_Current = 5;
+    private int playerLevel = 1;
 
-    public int StageNumber
+    public int PlayerLevel
     {
         get
         {
-            return stageNum;
+            return playerLevel;
         }
     }
 
@@ -44,14 +42,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        playerLevel = 1;
         healthCnt = CryptoPlayerPrefs.GetInt("healthCnt");
-        stageNum = CryptoPlayerPrefs.GetInt("stageNum");
-        maxStageClearItem = 2 + stageNum;
         CalcHealthCnt(0);
         gameOverUI.gameObject.SetActive(false);
-        stageTxt.text = "Stage " + stageNum;
-        stageTxtShadow.text = stageTxt.text;
-        leftNumTxt.text = "× " + maxStageClearItem;
+        //expGainImg.fillAmount = expPoint_Current == 0 ? 0 : expPoint_Current / (playerLevel * 100);
+        expPoint_Current = 5;
+        GainExpFunc(0);
     }
 
     
@@ -153,25 +150,24 @@ public class GameManager : MonoBehaviour
         BuffUI_Start();
     }
 
+    public void GainExpFunc(int value)
+    {
+        expPoint_Current += value;
+        expGainImg.fillAmount = expPoint_Current == 0 ? 0 : expPoint_Current / (playerLevel * 100);
+
+        if(expPoint_Current >= playerLevel * 100)
+        {
+            playerLevel++;
+            playerLvText.text = "Lv." + playerLevel;
+            expPoint_Current -= ((playerLevel - 1) * 100);
+            GainExpFunc(0);
+        }
+    }
+
     public void GetStageClearItem()
     {
-        currentStageClearItem++;
-        leftNumTxt.text = "× " + (maxStageClearItem - currentStageClearItem);
 
-        if (maxStageClearItem <= currentStageClearItem)
-        {
-            if (stageNum >= maxStage)
-            {
-                Debug.Log("다음 스테이지가 없습니다.");
-                currentStageClearItem = 999;
-            }
-            else
-            {
-                currentStageClearItem = 0;
-                stageNum++;
-            }
-            PrefReset(stageNum, healthCnt);
-            SceneManager.LoadSceneAsync("Loading");
-        }
+
+
     }
 }

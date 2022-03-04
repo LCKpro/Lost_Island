@@ -40,7 +40,6 @@ public class BGMManager : MonoBehaviour
     private void GameBGM_Play()
     {
         string sceneName = CryptoPlayerPrefs.GetString("scene");
-        int stageNumber = CryptoPlayerPrefs.GetInt("stageNum");
 
         switch (sceneName)
         {
@@ -49,10 +48,8 @@ public class BGMManager : MonoBehaviour
                 break;
             case "stage":
                 {
-                    if (stageNumber >= mainBGM.Length)
-                        stageNumber = mainBGM.Length - 1;
-
-                    ChangeBGM(mainBGM[stageNumber - 1], 0, true);
+                    int randBGM = Random.Range(0, mainBGM.Length - 1);
+                    ChangeBGM(mainBGM[randBGM], 0, true);
                 }
                 break;
             default:

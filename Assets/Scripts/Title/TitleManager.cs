@@ -9,15 +9,14 @@ public class TitleManager : MonoBehaviour
 
     private void Awake()
     {
-        CryptoPlayerPrefs.DeleteAll();
+        //CryptoPlayerPrefs.DeleteAll();
     }
 
     void Start()
     {
-        CryptoPlayerPrefs_HasKeyStringFind("GoTitle", "off");
         CryptoPlayerPrefs_HasKeyStringFind("Tutorial", "on");
+        CryptoPlayerPrefs_HasKeyStringFind("GoTitle", "off");
         CryptoPlayerPrefs_HasKeyStringFind("scene", "title");
-        CryptoPlayerPrefs_HasKeyIntFind("stageNum", 1);
         CryptoPlayerPrefs_HasKeyIntFind("healthCnt", 3);
 
         SceneManager.LoadScene("Setting", LoadSceneMode.Additive);
@@ -39,7 +38,7 @@ public class TitleManager : MonoBehaviour
 
     public void GameStart()
     {
-        CryptoPlayerPrefs_HasKeyStringFind("GoTitle", "off");
+        CryptoPlayerPrefs.SetString("GoTitle", "off");
         CryptoPlayerPrefs.SetString("scene", "stage");
         BGMManager.instance.PlaySfx(transform.position, BGMManager.instance.buttonSound_Casual, 0, 1);
         GameLoading();

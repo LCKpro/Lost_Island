@@ -5,9 +5,12 @@ public class TimeManager : MonoBehaviour
 {
     public Text timeTxt;
     public Text timeTxt_Shadow;
+    public Text dayText;
+    public Text dayText_Shadow;
     public Light dirLight;
     public Light spotLight;
 
+    private int dayCount = 1;
     private float sec_Current = 0;
     private float min_Current = 0;
     private float time_Current;
@@ -49,14 +52,14 @@ public class TimeManager : MonoBehaviour
     }
     private void TimerCheck()
     {
-        if (0 <= sec_Current)
+        if (1 <= sec_Current)
         {
             sec_Current -= Time.deltaTime;
             numTxt = ((int)min_Current).ToString() + " : " + ((int)sec_Current).ToString("D2");
             timeTxt.text = numTxt;
             timeTxt_Shadow.text = numTxt;
         }
-        else if(0 > sec_Current)
+        else if(1 > sec_Current)
         {
             if (min_Current == 0)
             {
@@ -71,7 +74,7 @@ public class TimeManager : MonoBehaviour
     }
     private void TimerEnd()
     {
-        sec_Current = maxTime;
+        sec_Current = maxTime + 0.99f;
         numTxt = ((int)min_Current).ToString() + " : " + ((int)sec_Current).ToString("D2");
         timeTxt.text = numTxt;
         timeTxt_Shadow.text = numTxt;
@@ -88,6 +91,9 @@ public class TimeManager : MonoBehaviour
             dirLight.intensity = 1;
             spotLight.intensity = 0;
             isDay = true;
+            dayCount++;
+            dayText.text = dayCount + "일차";
+            dayText_Shadow.text = dayCount + "일차";
         }
         TimerReset();
     }

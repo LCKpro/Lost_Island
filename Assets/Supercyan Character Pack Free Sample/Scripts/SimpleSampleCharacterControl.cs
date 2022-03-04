@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimpleSampleCharacterControl : MonoBehaviour
 {
-    private enum ControlMode
+    /*private enum ControlMode
     {
         /// <summary>
         /// Up moves the character forward, left and right turn the character gradually and down moves the character backwards
@@ -14,7 +14,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         /// Character freely moves in the chosen direction from the perspective of the camera
         /// </summary>
         Direct
-    }
+    }*/
 
     [SerializeField] private float m_moveSpeed = 2;
     public float m_turnSpeed = 200;
@@ -23,7 +23,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     [SerializeField] private Animator m_animator = null;
     [SerializeField] private Rigidbody m_rigidBody = null;
 
-    [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
+    //[SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
     public VirtualStick joyStick;
     public bool isImmunity = false;
 
@@ -173,14 +173,14 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             {
                 case 0 :
                     Debug.Log("0번 아이템 사용");
-                    itemValue = (GameManager.instance.StageNumber * 1.3f) + 1.5f;
+                    itemValue = (GameManager.instance.PlayerLevel * 1.3f) + 1.5f;
                     ExplainManager.instance.TextGenerate(0);
                     GameManager.instance.BuffUI_On(0);
                     Item0_SpeedUp(itemValue);
                     break;
                 case 1:
                     Debug.Log("1번 아이템 사용");
-                    itemValue = (GameManager.instance.StageNumber) * 1.0f;
+                    itemValue = (GameManager.instance.PlayerLevel) * 1.0f;
                     ExplainManager.instance.TextGenerate(1);
                     GameManager.instance.BuffUI_On(1);
                     Item1_JumpPowerUp(itemValue);
@@ -200,7 +200,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         if (other.tag == "ClearItem")
         {
             BGMManager.instance.PlaySfx(transform.position, BGMManager.instance.getItemSound, 0, 1);
-            GameManager.instance.GetStageClearItem();
+            GameManager.instance.GainExpFunc(GameManager.instance.PlayerLevel * 30);
             ExplainManager.instance.TextGenerate(10);
             other.gameObject.SetActive(false);
         }
@@ -241,8 +241,9 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private void FixedUpdate()
     {
         m_animator.SetBool("Grounded", m_isGrounded);
+        TankUpdate();
 
-        switch (m_controlMode)
+        /*switch (m_controlMode)
         {
             case ControlMode.Direct:
                 DirectUpdate();
@@ -255,8 +256,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             default:
                 Debug.LogError("Unsupported state");
                 break;
-        }
-
+        }*/
         m_wasGrounded = m_isGrounded;
         m_jumpInput = false;
     }

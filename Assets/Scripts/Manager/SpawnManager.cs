@@ -132,7 +132,7 @@ public class SpawnManager : MonoBehaviour
             return;
         }
 
-        int randSpawnNum = Random.Range(3, 4 + GameManager.instance.StageNumber);
+        int randSpawnNum = Random.Range(3, 4 + GameManager.instance.PlayerLevel);
         
         for (int i = 0; i < randSpawnNum; i++)
         {
