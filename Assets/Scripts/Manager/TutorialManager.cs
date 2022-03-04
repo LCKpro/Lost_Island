@@ -21,13 +21,6 @@ public class TutorialManager : MonoBehaviour
     private string[] explainTalk;
     private bool isEnd = false;
 
-    /*public static TutorialManager instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-*/
     private void Start()
     {
         tutorialTalk = "여행 중 비행기가 불시착했습니다.\n이 정체모를 섬에는 어떤 일이 벌어질지 모릅니다!\n섬 주변에 있는 전리품은 꽤 도움이 될 것 같습니다.\n또한 연구자료가 담긴 가방을 반드시 모아야합니다.";
@@ -45,6 +38,7 @@ public class TutorialManager : MonoBehaviour
         if (CryptoPlayerPrefs.GetString("Tutorial") == "off")
         {
             GameStart();
+            return;
         }
 
         Debug.Log("호출");
@@ -115,7 +109,7 @@ public class TutorialManager : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Ended)
             {
-                if (count >= 3)
+                if (count >= explainTalk.Length - 1)
                 {
                     if (isEnd)
                         GameStart();
