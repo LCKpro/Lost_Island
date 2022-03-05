@@ -1736,6 +1736,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1402715662}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &76148668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76148669}
+  - component: {fileID: 76148670}
+  - component: {fileID: 76148671}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &76148669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76148668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426262280}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &76148670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76148668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e58949a24c0ea4ba3bd660654c4f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeItemSlot:
+  - {fileID: 1737765677}
+  - {fileID: 1142259939}
+  - {fileID: 247801500}
+  - {fileID: 636553458}
+--- !u!114 &76148671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76148668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e67ce4135a02894eb768f1cd3874dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeItems:
+  - damage: 1
+    sprite: {fileID: 21300120, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+    activeNum: 0
+    amount: 1
+  - damage: 5
+    sprite: {fileID: 6012327151796547637, guid: d64cde758e7727f4a995914fc4704826,
+      type: 3}
+    activeNum: 2
+    amount: 1
+  - damage: 5
+    sprite: {fileID: 1480530017906609319, guid: d64cde758e7727f4a995914fc4704826,
+      type: 3}
+    activeNum: 3
+    amount: 1
+  - damage: 5
+    sprite: {fileID: 651262269627332409, guid: d64cde758e7727f4a995914fc4704826, type: 3}
+    activeNum: 3
+    amount: 1
 --- !u!4 &76539558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4371326550095878, guid: 8fcd235d2094ac44094696a898fa6a10,
@@ -8684,6 +8764,7 @@ Transform:
   - {fileID: 739454893}
   - {fileID: 1502685392}
   - {fileID: 1850808077}
+  - {fileID: 76148669}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
