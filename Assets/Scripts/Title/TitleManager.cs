@@ -7,10 +7,10 @@ public class TitleManager : MonoBehaviour
 {
     private float moveX;
 
-    private void Awake()
+    /*private void Awake()
     {
-        //CryptoPlayerPrefs.DeleteAll();
-    }
+        CryptoPlayerPrefs.DeleteAll();
+    }*/
 
     void Start()
     {

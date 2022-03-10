@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1747,6 +1747,7 @@ GameObject:
   - component: {fileID: 76148669}
   - component: {fileID: 76148670}
   - component: {fileID: 76148671}
+  - component: {fileID: 76148672}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -1798,24 +1799,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeItems:
-  - damage: 1
-    sprite: {fileID: 21300120, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-    activeNum: 0
-    amount: 1
-  - damage: 5
-    sprite: {fileID: 6012327151796547637, guid: d64cde758e7727f4a995914fc4704826,
-      type: 3}
-    activeNum: 2
-    amount: 1
-  - damage: 5
-    sprite: {fileID: 1480530017906609319, guid: d64cde758e7727f4a995914fc4704826,
-      type: 3}
-    activeNum: 3
-    amount: 1
-  - damage: 5
-    sprite: {fileID: 651262269627332409, guid: d64cde758e7727f4a995914fc4704826, type: 3}
-    activeNum: 3
-    amount: 1
+  - id: 0
+    title: 
+    value: 0
+    power: 0
+    defense: 0
+    vitality: 0
+    description: 
+    stackable: 0
+    rarity: 0
+    slug: 0
+    sprite: {fileID: 0}
+  - id: 0
+    title: 
+    value: 0
+    power: 0
+    defense: 0
+    vitality: 0
+    description: 
+    stackable: 0
+    rarity: 0
+    slug: 0
+    sprite: {fileID: 0}
+  - id: 0
+    title: 
+    value: 0
+    power: 0
+    defense: 0
+    vitality: 0
+    description: 
+    stackable: 0
+    rarity: 0
+    slug: 0
+    sprite: {fileID: 0}
+  - id: 0
+    title: 
+    value: 0
+    power: 0
+    defense: 0
+    vitality: 0
+    description: 
+    stackable: 0
+    rarity: 0
+    slug: 0
+    sprite: {fileID: 0}
+--- !u!114 &76148672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76148668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3855804ec909cf040b9b2aa445b4effa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &76539558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4371326550095878, guid: 8fcd235d2094ac44094696a898fa6a10,
@@ -15700,7 +15739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &709056859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37334,6 +37373,8 @@ GameObject:
   - component: {fileID: 1578966836}
   - component: {fileID: 1578966835}
   - component: {fileID: 1578966837}
+  - component: {fileID: 1578966838}
+  - component: {fileID: 1578966839}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -37425,6 +37466,44 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!225 &1578966838
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578966833}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1578966839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578966833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81458758fa79cc941be36b79c3d9d596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    id: 0
+    title: 
+    value: 0
+    power: 0
+    defense: 0
+    vitality: 0
+    description: 
+    stackable: 0
+    rarity: 0
+    slug: 0
+    sprite: {fileID: 0}
+  amount: 4
+  slotId: 4
 --- !u!4 &1580257728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4543998987871134, guid: 46aa8b6d013691a43a624b2200d4519a,
@@ -45889,7 +45968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1858924453
 RectTransform:
   m_ObjectHideFlags: 0

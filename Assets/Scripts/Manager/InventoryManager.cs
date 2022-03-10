@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < activeItemSlot.Length; i++)
         {
-            activeItemSlot[i].sprite = inventory[i].sprite;
+            activeItemSlot[i].sprite = inventory[i].Sprite;
         }
     }
 
@@ -33,7 +33,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < inventory.Count; i++)
         {
-            if(inventory[i].activeNum == 0)
+            if(inventory[i].Id == 0)
             {
                 inventory[i] = books.CastActiveItem(num);
                 break;
