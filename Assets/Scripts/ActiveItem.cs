@@ -4,11 +4,6 @@ using UnityEngine;
 [Serializable]
 public class ActiveItem
 {
-	/*public int damage;
-    public Sprite sprite;
-    public int activeNum;
-    public int amount;*/
-
 	[SerializeField]
 	private int id;
 	[SerializeField]
@@ -28,7 +23,7 @@ public class ActiveItem
 	[SerializeField]
 	private int rarity;
 	[SerializeField]
-	private int slug;
+	private string slug;
 	[SerializeField]
 	private Sprite sprite;
 
@@ -41,8 +36,10 @@ public class ActiveItem
 	public string Description { get; set; }
 	public bool Stackable { get; set; }
 	public int Rarity { get; set; }
-	public string Slug { get; set; }*/
-    
+	public int Slug { get; set; }
+	public Sprite Sprite { get; set; }*/
+
+	
     public int Id { get => id; set => id = value; }
     public string Title { get => title; set => title = value; }
     public int Value { get => value; set => this.value = value; }
@@ -52,7 +49,7 @@ public class ActiveItem
     public string Description { get => description; set => description = value; }
     public bool Stackable { get => stackable; set => stackable = value; }
     public int Rarity { get => rarity; set => rarity = value; }
-    public int Slug { get => slug; set => slug = value; }
+    public string Slug { get => slug; set => slug = value; }
 	public Sprite Sprite { get => sprite; set => sprite = value; }
 
 	public ActiveItem()
