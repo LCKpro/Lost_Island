@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Tooltip : MonoBehaviour
 {
-	private ActiveItem item;
+	private Item item;
 	private string data;
 	private GameObject tooltip;
 
@@ -22,7 +22,7 @@ public class Tooltip : MonoBehaviour
 		}
 	}
 
-	public void Activate(ActiveItem item)
+	public void Activate(Item item)
 	{
 		this.item = item;
 		ConstructDataString();

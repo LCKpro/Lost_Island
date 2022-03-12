@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
+using LitJson;
 using System.Collections.Generic;
 using System.IO;
 
 public class ItemDatabase : MonoBehaviour
 {
-	private List<ActiveItem> database = new List<ActiveItem>();
-	private ActiveItemBook itemData;
+	private List<Item> database = new List<Item>();
+	private JsonData itemData;
 
-	void Start()
+	void Awake()
 	{
-		itemData = GetComponent<ActiveItemBook>();
+		itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
 		ConstructItemDatabase();
 	}
 
-	public ActiveItem FetchItemById(int id)
+	public Item FetchItemById(int id)
 	{
 		for (int i = 0; i < database.Count; i++)
 		{
@@ -28,22 +29,42 @@ public class ItemDatabase : MonoBehaviour
 
 	void ConstructItemDatabase()
 	{
-		for (int i = 0; i < itemData.activeItems.Length; i++)
+		for (int i = 0; i < itemData.Count; i++)
 		{
-			ActiveItem newItem = new ActiveItem();
-			newItem.Id = itemData.CastActiveItem(i).Id;
-			newItem.Title = itemData.CastActiveItem(i).Title;
-			newItem.Value = itemData.CastActiveItem(i).Value;
-			newItem.Power = itemData.CastActiveItem(i).Power;
-			newItem.Defense = itemData.CastActiveItem(i).Defense;
-			newItem.Vitality = itemData.CastActiveItem(i).Vitality;
-			newItem.Description = itemData.CastActiveItem(i).Description;
-			newItem.Stackable = itemData.CastActiveItem(i).Stackable;
-			newItem.Rarity = itemData.CastActiveItem(i).Rarity;
-			newItem.Slug = itemData.CastActiveItem(i).Slug;
-			newItem.Sprite = itemData.CastActiveItem(i).Sprite;
+			Item newItem = new Item();
+			newItem.Id = (int)itemData[i]["id"];
+			newItem.Title = itemData[i]["title"].ToString();
+			newItem.Value = (int)itemData[i]["value"];
+			newItem.Power = (int)itemData[i]["stats"]["power"];
+			newItem.Defense = (int)itemData[i]["stats"]["defense"];
+			newItem.Vitality = (int)itemData[i]["stats"]["vitality"];
+			newItem.Description = itemData[i]["description"].ToString();
+			newItem.Stackable = (bool)itemData[i]["stackable"];
+			newItem.Rarity = (int)itemData[i]["rarity"];
+			newItem.Slug = itemData[i]["slug"].ToString();
+			newItem.Sprite = Resources.Load<Sprite>("Sprites/Items/" + newItem.Slug);
 
 			database.Add(newItem);
 		}
+	}
+}
+
+public class Item
+{
+	public int Id { get; set; }
+	public string Title { get; set; }
+	public int Value { get; set; }
+	public int Power { get; set; }
+	public int Defense { get; set; }
+	public int Vitality { get; set; }
+	public string Description { get; set; }
+	public bool Stackable { get; set; }
+	public int Rarity { get; set; }
+	public string Slug { get; set; }
+	public Sprite Sprite { get; set; }
+
+	public Item()
+	{
+		this.Id = -1;
 	}
 }

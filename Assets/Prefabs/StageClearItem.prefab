@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 6918927638100599803}
   - component: {fileID: 6918927638102637476}
   - component: {fileID: 6918927638102637477}
-  - component: {fileID: 6918927638102637479}
+  - component: {fileID: -8834423334453212423}
   m_Layer: 9
   m_Name: StageClearItem
   m_TagString: ClearItem
@@ -204,7 +204,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6918927638102637479
+--- !u!114 &-8834423334453212423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6918927638102605115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1100592f61214a4280bfe14afa03a65, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c62433da406ed42a850a135d22f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemNum: 10

@@ -166,7 +166,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
         if(other.tag == "Item")
         {
-            Item item = other.GetComponent<Item>();
+            StageItem item = other.GetComponent<StageItem>();
             float itemValue;
             BGMManager.instance.PlaySfx(transform.position, BGMManager.instance.getItemSound, 0, 1);
             switch (item.itemNum)

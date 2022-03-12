@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
 {
-
 	GameObject inventoryPanel;
 	GameObject slotPanel;
 	ItemDatabase database;
@@ -13,10 +12,16 @@ public class Inventory : MonoBehaviour
 	public GameObject inventoryItem;
 
 	private int slotAmount;
-	public List<ActiveItem> items = new List<ActiveItem>();
+	public List<Item> items = new List<Item>();
 	public List<GameObject> slots = new List<GameObject>();
 
-	void Start()
+	public static Inventory instance;
+    private void Awake()
+    {
+		instance = this;
+	}
+
+    void Start()
 	{
 		database = GetComponent<ItemDatabase>();
 		slotAmount = 4;
@@ -24,7 +29,7 @@ public class Inventory : MonoBehaviour
 		slotPanel = inventoryPanel.transform.Find("SlotFrame").gameObject;
 		for (int i = 0; i < slotAmount; i++)
 		{
-			items.Add(new ActiveItem());
+			items.Add(new Item());
 			slots.Add(Instantiate(inventorySlot));
 			slots[i].GetComponent<Slot>().id = i;
 			slots[i].transform.SetParent(slotPanel.transform);
@@ -34,17 +39,11 @@ public class Inventory : MonoBehaviour
 		AddItem(1);
 		AddItem(1);
 		AddItem(1);
-		/*AddItem(1);
-		AddItem(1);
-		AddItem(1);
-		AddItem(1);
-		AddItem(1);
-		AddItem(2);*/
 	}
 
 	public void AddItem(int id)
 	{
-		ActiveItem itemToAdd = database.FetchItemById(id);
+		Item itemToAdd = database.FetchItemById(id);
 		if (itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
 		{
 			for (int i = 0; i < items.Count; i++)
@@ -79,7 +78,7 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
-	bool CheckIfItemIsInInventory(ActiveItem item)
+	bool CheckIfItemIsInInventory(Item item)
 	{
 		for (int i = 0; i < items.Count; i++)
 		{

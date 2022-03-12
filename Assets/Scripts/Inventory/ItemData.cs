@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
-	public ActiveItem item;
+	public Item item;
 	public int amount;
 	public int slotId;
 

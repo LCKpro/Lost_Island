@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : Spawn
+public class StageItem : Spawn
 {
     protected Transform player;
     public int itemNum;
@@ -15,5 +15,4 @@ public class Item : Spawn
     {
         transform.Rotate(0, 1, 0);
     }
-
 }

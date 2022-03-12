@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2798214409677543814}
   - component: {fileID: 2798214409675506170}
   - component: {fileID: 2798214409675506148}
-  - component: {fileID: 2798214409675506171}
+  - component: {fileID: 8764099638405300774}
   m_Layer: 9
   m_Name: IceCream_0
   m_TagString: Item
@@ -113,7 +113,7 @@ CapsuleCollider:
   m_Height: 1.82
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2798214409675506171
+--- !u!114 &8764099638405300774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2798214409675540294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1100592f61214a4280bfe14afa03a65, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c62433da406ed42a850a135d22f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemNum: 0
