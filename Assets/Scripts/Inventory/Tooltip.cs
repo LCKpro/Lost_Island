@@ -36,8 +36,21 @@ public class Tooltip : MonoBehaviour
 
 	public void ConstructDataString()
 	{
-		data = "<color=#FFEC58FF><b>" + item.Title + "</b></color>\n\n" + item.Description
+        switch (item.Rarity)
+        {
+			case 1:
+				data = "<color=#FFC945><b>" + item.Title + "</b></color>\n\n" + item.Description
 			+ "\nPower: " + item.Power;
+				break;
+			case 2:
+				data = "<color=#743CB7><b>" + item.Title + "</b></color>\n\n" + item.Description
+			+ "\nPower: " + item.Power;
+				break;
+            default:
+                break;
+        }
+        /*data = "<color=#FFEC58FF><b>" + item.Title + "</b></color>\n\n" + item.Description
+			+ "\nPower: " + item.Power;*/
 		tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
 	}
 

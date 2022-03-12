@@ -1,44 +1,143 @@
 [
 	{
 		"id": 0,
-		"title": "Steel Gloves",
-		"value": 6,
+		"title": "투척용 나이프",
+		"value": 1,
 		"stats": {
-			"power": 1,
-			"defense": 4,
-			"vitality": 2
+			"power": 5,
+			"defense": 1,
+			"vitality": 1
 		},
-		"description": "Gloves made from steel. Yea.",
-		"stackable": false,
-		"rarity": 2,
-		"slug":  "steel-gloves"
+		"description": "투척용 나이프다.",
+		"stackable": true,
+		"rarity": 1,
+		"slug": "1-normal-throwing-knife"
 	},
 	{
 		"id": 1,
-		"title": "The Great Stick",
-		"value": 543,
+		"title": "불도끼",
+		"value": 1,
 		"stats": {
-			"power": 56,
-			"defense": 2,
-			"vitality": 54
+			"power": 50,
+			"defense": 1,
+			"vitality": 1
 		},
-		"description": "It's a stick that's pretty great.",
+		"description": "Here's Jorney!",
 		"stackable": true,
-		"rarity": 6,
-		"slug": "the-great-stick"
+		"rarity": 2,
+		"slug": "1-rare-fireaxe"
 	},
 	{
 		"id": 2,
-		"title": "The Golden Sword",
-		"value": 234,
+		"title": "막대 아이스크림",
+		"value": 1,
+		"stats": {
+			"power": 2,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "1+1 세일 중",
+		"stackable": true,
+		"rarity": 1,
+		"slug": "2-normal-hardbar"
+	},
+	{
+		"id": 3,
+		"title": "빅 아이스크림",
+		"value": 1,
+		"stats": {
+			"power": 10,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "민트초코맛이다. 몬스터들이 동요하고 있다.",
+		"stackable": true,
+		"rarity": 2,
+		"slug": "2-rare-bighardbar"
+	},
+	{
+		"id": 4,
+		"title": "쿠키",
+		"value": 1,
+		"stats": {
+			"power": 8,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "용감한 쿠키",
+		"stackable": true,
+		"rarity": 1,
+		"slug": "3-normal-cookie"
+	},
+	{
+		"id": 5,
+		"title": "샌드위치",
+		"value": 1,
+		"stats": {
+			"power": 80,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "An Idiot Sandwich",
+		"stackable": true,
+		"rarity": 2,
+		"slug": "3-rare-sandwich"
+	},
+	{
+		"id": 6,
+		"title": "드릴",
+		"value": 1,
+		"stats": {
+			"power": 20,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "내 드릴은..",
+		"stackable": true,
+		"rarity": 1,
+		"slug": "4-normal-drill"
+	},
+	{
+		"id": 7,
+		"title": "대형 전기톱",
+		"value": 1,
 		"stats": {
 			"power": 200,
-			"defense": 100,
-			"vitality": 150
+			"defense": 1,
+			"vitality": 1
 		},
-		"description": "This is the best weapon.",
-		"stackable": false,
-		"rarity": 6,
-		"slug":  "golden-sword"
+		"description": "훌륭한 대화수단.",
+		"stackable": true,
+		"rarity": 2,
+		"slug": "4-rare-chainsaw"
+	},
+	{
+		"id": 8,
+		"title": "덤벨",
+		"value": 1,
+		"stats": {
+			"power": 20,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "1세트 더!!",
+		"stackable": true,
+		"rarity": 1,
+		"slug": "5-normal-weight"
+	},
+	{
+		"id": 9,
+		"title": "전경 방패",
+		"value": 1,
+		"stats": {
+			"power": 200,
+			"defense": 1,
+			"vitality": 1
+		},
+		"description": "넌 못 지나간다",
+		"stackable": true,
+		"rarity": 2,
+		"slug": "5-rare-riotshield"
 	}
+
 ]

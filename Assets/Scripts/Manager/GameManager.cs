@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         CalcHealthCnt(0);
         gameOverUI.gameObject.SetActive(false);
         //expGainImg.fillAmount = expPoint_Current == 0 ? 0 : expPoint_Current / (playerLevel * 100);
-        expPoint_Current = 5;
+        expPoint_Current = 0;
         GainExpFunc(0);
     }
 
