@@ -57,4 +57,8 @@ public class SettingManager : MonoBehaviour
         //Debug.Log("sfx : " + bgmScroll.value);
     }
 
+    public void ActiveTutorial()
+    {
+        CryptoPlayerPrefs.SetString("Tutorial", "on");
+    }
 }
